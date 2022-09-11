@@ -1,0 +1,86 @@
+.cover{
+    opacity: 0;
+    background-color: #ccc;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.cover.active{
+    opacity: 0.9;
+    z-index: 100;
+    .transit(all, .5s)
+}
+.header{
+    position: fixed;
+    z-index: 200;
+    width: 100%;
+    &-bar {
+        display: none;
+        padding: 15px;
+        margin-left: -15px;
+        i {
+            font-size: 20px;
+        }
+    }
+
+    background-color: rgba(0, 0, 0, 0.6);
+   &-inner{
+    min-height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header__logo{
+        margin-top: 6px;
+    }
+    .header__navbar{
+        &-list{
+            display: flex;
+            li{
+                margin: 0 26px;
+                a{
+                    color: @color-white;
+                }
+            }
+
+            li:first-child{
+                margin-left: 0;
+            }
+
+            li:last-child{
+                margin-right: 18px;
+            }
+        }
+    }
+
+    .header__tool{
+        &-list{
+            display: flex;
+            font-size: 16px;
+            font-weight: 400;
+            color: @color-white;
+            li{
+                padding: 0 26px;
+                line-height: 0; // Khử light-height thẻ li để chiều cao khớp với icon
+                a{
+                    color: @color-white;
+                }
+            }
+
+            .header-search{
+                border-right: 2px solid @color-gray;
+            }
+
+            .header-user{
+                padding-right: 0;
+                border-left: 2px solid @color-gray;
+            }
+
+        }
+    }
+   } 
+
+
+
+}

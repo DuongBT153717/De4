@@ -1,0 +1,377 @@
+.banner {
+    position: relative;
+    background-image: url(https://hoangdungxz.github.io/de4demo/assets/images/banner/banner_model.png), url(https://hoangdungxz.github.io/de4demo/assets/images/banner/banner_background.png);
+    min-height: 950px;
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto 759px, auto 100%;
+    background-position: bottom 0 right 23.8%, center;
+
+    &-inner {
+        padding-top: 292px;
+        width: 532px;
+        max-width: 100%;
+        color: @color-white;
+
+
+        &__title {
+            font-size: 60px;
+            font-weight: 700;
+            margin-bottom: -9px;
+        }
+
+        &__slogan {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        &__description {
+            font-size: 14px;
+            line-height: 1.7142;
+            margin-bottom: 55px;
+        }
+
+        &__shop-now {
+            .banner-inner__btn {
+                border: 1px solid @color-white;
+                outline: none;
+                padding: 16px 47px;
+                text-transform: uppercase;
+                background-color: transparent;
+                color: @color-white;
+            }
+        }
+    }
+}
+
+.category {
+    &-row {
+        height: 500px;
+        overflow: hidden;
+        margin-top: -77px;
+        display: flex;
+        background-color: @color-white;
+        filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+
+        .category-col {
+            width: calc(100% / 3);
+            flex: calc(100% / 3);
+
+            .category-item {
+                &__content {
+                    background-color: @color-white;
+
+                    &-inner {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        text-align: center;
+
+                        .category-item__content-img {
+                            max-width: 70px; // điều chỉnh độ rộng icon
+                            width: 100%;
+                            max-height: 70px; // điều chỉnh độ rộng icon
+                            height: 100%;
+                            line-height: 0;
+                            display: flex;
+                            align-items: flex-end; //icon luôn căn dưới theo chiều dọc nếu độ cao < 70px
+                            justify-content: center; // icon căn giữa
+
+                            img {
+                                width: auto; // giữ lại kích cỡ ảnh gốc
+                                max-width: 100%; // nếu ảnh gốc width > 70px width = 70px
+                            }
+                        }
+
+                        .category-item__content-title {
+                            font-size: 18px;
+                            text-transform: uppercase;
+                            color: @color-black;
+                            font-weight: 700;
+                            margin: 23px 0 13px 0;
+                        }
+
+
+                        .category-item__content-detail {
+                            padding: 0 37px;
+                            font-size: 14px;
+                            line-height: 24px;
+                            color: #777777;
+                        }
+                    }
+
+                    .category-item__content--fixed {
+                        .category-item__content-img {
+                            position: absolute;
+                            top: 30px;
+                        }
+
+                        .category-item__content-title {
+                            margin: 65px 0 18px 0;
+                        }
+                    }
+                    
+                }
+
+                &__img {
+                    padding-top: 250px;
+                }
+
+                &>div {
+                    padding-top: calc(250 / 390 * 100%); // tạo khung
+                    position: relative;
+
+                    &>img,
+                    // Đẩy ảnh đầu tiên hoặc khối đâu tiên lên khung
+                    &>div {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain; // chống méo ảnh
+                    }
+                }
+            }
+        }
+    }
+}
+
+.top-selling {
+    margin-top: 97px;
+
+    .product-tab {
+        display: flex;
+        border-bottom: 1px solid #ddd;
+
+        &__title {
+            font-size: 18px;
+            line-height: 24px;
+            text-transform: uppercase;
+            color: #000018;
+            font-weight: 700;
+            display: block;
+            padding: 0 17px 16px;
+            text-align: center; // căn giữa khi bị xuống dòng(màn hình nhỏ hơn)
+
+            &.active {
+                color: @color-red;
+                border-bottom: 2px solid @color-red;
+            }
+        }
+    }
+
+    .product-inner {
+        margin-top: 40px;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+
+        .product-row {
+            row-gap: 45px;
+        }
+
+        .product-col {
+            .cols(3);
+
+            .product-item {
+                position: relative;
+
+                .product-image {
+                    padding-top: calc(230 / 270 * 100%); // (230 / 270) tỷ lệ ảnh
+                    position: relative;
+
+                    img {
+                        position: absolute; // đẩy ảnh lên khung
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+
+                }
+
+                background-color: @color-white;
+
+                .product-content {
+                    padding: 22px 30px 30px 30px;
+
+                    .product-title {
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 24px;
+                    }
+
+                    .product-price {
+                        font-size: 14px;
+                        font-weight: 700;
+                    }
+                }
+
+                .product-tool {
+                    display: none;
+
+                    ul {
+                        position: absolute;
+                        top: 19px;
+                        right: 19px;
+
+                        li {
+                            text-align: center;
+                            font-size: 15px;
+                            width: 33px;
+                            height: 32px;
+                            line-height: 28px;
+                            border: 1px solid @color-gray2;
+                            border-top-left-radius: 5px;
+                            border-bottom-right-radius: 5px;
+                            margin-bottom: 15px;
+                        }
+
+                        li:hover {
+                            background-color: #dd2f31;
+                        }
+                    }
+                }
+            }
+
+            .product-item:hover {
+                filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+                .transform(scale(1.1));
+                transition: all 0.2s;
+
+                .product-tool {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.news {
+    &-inner {
+        text-align: center;
+        margin-top: 94px;
+
+        &__title {
+            font-size: 36px;
+            font-weight: 700;
+            color: @color-black;
+            margin-bottom: 49px;
+        }
+
+        &__img {
+            text-align: center;
+            margin-bottom: -6px;
+
+            img {
+                display: inline-block;
+            }
+        }
+
+        &__detail {
+            font-size: 18px;
+            line-height: 30px;
+            color: #777777;
+            font-weight: 400;
+            text-align: center;
+            width: 769px;
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        &__identify {
+            margin-top: 7px;
+
+            .author {
+                font-size: 18px;
+                line-height: 30px;
+                text-transform: uppercase;
+                color: @color-black;
+                font-weight: 700;
+                margin-bottom: 3px;
+
+            }
+
+            .status {
+                font-size: 14px;
+                line-height: 30px;
+                color: #777;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.news-slick {
+    .slick-dots {
+        bottom: -51px;
+
+        li {
+            margin: 0;
+        }
+
+        button::before {
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        .slick-active {
+            button::before {
+                color: #dd2f31;
+            }
+        }
+    }
+}
+
+.brand {
+
+    .row {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -1px; // Đường viền bên trên nội dung
+            left: 50%;
+            transform: translateX(-50%); // cho ra giữa
+            width: calc(100% - 30px); // Vì row tràn ngoài lề 2 bên 15px
+            height: 1px;
+            background-color: #ccc;
+        }
+    }
+
+
+    margin-top: 143px;
+
+    &-col {
+        .cols(2);
+
+        .brand-img {
+            padding-top: calc(151 / 170 * 100%); // tạo khung
+            position: relative;
+
+            img {
+                width: auto;
+                max-width: 90%; // Không cho ảnh lớn quá
+                min-width: 80%; // Không cho ảnh nhỏ quá
+                position: absolute; // đưa lên khung
+                top: 50%; // căn giữa
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                -o-transform: translate(-50%, -50%);
+            }
+        }
+    }
+}

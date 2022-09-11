@@ -1,0 +1,112 @@
+.footer {
+    background-color: #222;
+    color: #777;
+
+    &-top {
+        padding-top: 100px;
+        text-align: center;
+
+        &__content {
+            padding-top: 28px;
+            padding-bottom: 37px;
+            display: inline-block;
+            width: 770px;
+            font-size: 14px;
+            line-height: 24px;
+            color: #777777;
+            font-weight: 400;
+            max-width: 100%;
+        }
+
+        &__social {
+            padding-bottom: 55px;
+
+            ul {
+                display: flex;
+                justify-content: center;
+
+                li {
+                    font-size: 18px;
+                    margin: 0 22px;
+
+                    a {
+                        color: #777;
+                    }
+                }
+
+                li:first-child {
+                    margin: 0 25px 0 34px;
+                }
+            }
+        }
+    }
+
+    &-bottom {
+        padding-bottom: 43px;
+        .row {
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: -1px; // Đường viền bên trên nội dung
+                left: 50%;
+                transform: translateX(-50%); // cho ra giữa
+                -moz-transform: translateX(-50%);
+                -o-transform: translateX(-50%);
+                -webkit-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                width: calc(100% - 30px); // Vì row tràn ngoài lề 2 bên 15px
+                height: 1px;
+                background-color: #444;
+            }
+        }
+
+        li {
+            a {
+                font-size: 14px;
+                line-height: 40px;
+                color: #777777;
+                font-weight: 400;
+            }
+        }
+
+        .footer-col {
+            .cols(3);
+            
+            .footer-heading {
+                font-size: 18px;
+                line-height: 30px;
+                text-transform: uppercase;
+                color: @color-white;
+                font-weight: 700;
+                padding: 70px 0 16px 0;
+            }
+
+            .footer-contact-list {
+                a {
+                    display: flex;
+                    align-items: center;
+
+                    i {
+                        width: 29px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.copyright {
+    background-color: #111;
+    &-content {
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        line-height: 30px;
+        color: #777777;
+        font-weight: 400;
+    }
+}

@@ -1,0 +1,94 @@
+//font face
+.font-face(
+    @family-name,
+    @font-name,
+    @font-weight: normal,
+    @font-style: normal,
+    @font-display: auto
+) {
+    @font-face {
+        font-family: @family-name;
+        src: url('@{baseDir}fonts/@{family-name}/ttf/@{font-name}.ttf')
+                format('truetype'),
+            url('@{baseDir}fonts/@{family-name}/woff/@{font-name}.woff')
+                format('woff'),
+            url('@{baseDir}fonts/@{family-name}/woff2/@{font-name}.woff2')
+                format('woff2');
+        font-weight: @font-weight;
+        font-style: @font-style;
+    }
+}
+
+
+
+
+//mixin column
+.cols(@_col){
+    max-width: calc(@_col * 100% / 12); // độ rộng của col / 12
+    flex: 0 0 calc(@_col * 100% / 12); // độ rộng của col / 12
+    position: relative;
+    width: 100%;
+    padding: 0 15px; // Khoảng cách giữa các col
+    box-sizing: border-box;
+}
+
+// Flex
+.flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+ 
+.flex(@_values) {
+    -webkit-box-flex: @_values;
+    -moz-box-flex: @_values;
+    -webkit-flex: @_values;
+    -ms-flex: @_values;
+    flex: @_values;
+}
+.order(@_val) {
+    -webkit-box-ordinal-group: @_val;
+    -moz-box-ordinal-group: @_val;
+    -ms-flex-order: @_val;
+    -webkit-order: @_val;
+    order: @_val;
+}
+
+
+//select
+.appearance(@kanet){
+    appearance: @kanet;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+//transform
+.transform(@scale){
+    transform: @scale;
+    -webkit-transform: @scale;
+    -moz-transform: @scale;
+    -ms-transform: @scale;
+    -o-transform: @scale;
+}
+
+//transition
+
+.transit(@attr, @sec){
+    transition: @attr, @sec;
+    -webkit-transition: @attr, @sec;
+    -moz-transition: @attr, @sec;
+    -ms-transition: @attr, @sec;
+    -o-transition: @attr, @sec;
+}
+
+//col
+
+.col (@width){
+    width: @width;
+    padding: 0 15px;
+    margin: 15px 0;
+    box-sizing: border-box;
+}
